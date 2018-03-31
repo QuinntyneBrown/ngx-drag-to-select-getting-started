@@ -1,0 +1,13 @@
+<app-primary-header>
+  Dashboard
+</app-primary-header>
+
+<div class="drag-area">
+  <ngx-select-container #selectContainer="ngx-select-container" [(selectedItems)]="selectedDocuments" [selectOnDrag]="selectOnDrag" (select)="onSelect($event)">
+    <mat-grid-list cols="4" rowHeight="200px" gutterSize="20px">
+      <mat-grid-tile [selectItem]="document" *ngFor="let document of documents">
+        {{ document.name }}
+      </mat-grid-tile>
+    </mat-grid-list>
+  </ngx-select-container>
+</div>
